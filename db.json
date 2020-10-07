@@ -1,0 +1,114 @@
+{
+  "products": [
+    {
+      "brand": "Apple",
+      "model": "Watch Series 4 GPS",
+      "description": "Redesigned from scratch and completely revised.",
+      "image": "1.png",
+      "price": 399,
+      "rating": 3.4,
+      "id": 1,
+      "wishlist": false,
+      "cart": false
+    },
+    {
+      "brand": "JBL",
+      "model": "Speaker",
+      "description": "Redesigned from scratch and completely revised.",
+      "image": "2.png",
+      "price": 199,
+      "rating": 3.4,
+      "id": 2,
+      "wishlist": false,
+      "cart": false
+    },
+    {
+      "brand": "Apple",
+      "model": "Watch Series 4 GPS",
+      "description": "Redesigned from scratch and completely revised.",
+      "image": "3.png",
+      "price": 899,
+      "rating": 3.4,
+      "id": 3,
+      "wishlist": false,
+      "cart": false
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone X 128GB",
+      "description": "Redesigned from scratch and completely revised.",
+      "image": "4.png",
+      "price": 459,
+      "rating": 3.4,
+      "id": 4,
+      "wishlist": false,
+      "cart": false
+    },
+    {
+      "brand": "Beats",
+      "model": "Headphones",
+      "description": "Redesigned from scratch and completely revised.",
+      "image": "5.png",
+      "price": 2499,
+      "rating": 3.4,
+      "id": 5,
+      "wishlist": false,
+      "cart": false
+    },
+    {
+      "brand": "Apple",
+      "model": "Macbook Pro 512GB SSD",
+      "description": "Redesigned from scratch and completely revised.",
+      "image": "6.png",
+      "price": 899,
+      "rating": 3.4,
+      "id": 6,
+      "wishlist": false,
+      "cart": false
+    },
+    {
+      "brand": "Apple",
+      "model": "iPad Pro 64GB",
+      "description": "Redesigned from scratch and completely revised.",
+      "image": "7.png",
+      "price": 499,
+      "rating": 3.4,
+      "id": 7,
+      "wishlist": false,
+      "cart": false
+    },
+    {
+      "brand": "Apple",
+      "model": "Homepod",
+      "description": "Redesigned from scratch and completely revised.",
+      "image": "8.png",
+      "price": 899,
+      "rating": 3.4,
+      "id": 8,
+      "wishlist": false,
+      "cart": false
+    },
+    {
+      "brand": "JBuds",
+      "model": "Air Wireless Bluetooth…",
+      "description": "Redesigned from scratch and completely revised.",
+      "image": "9.png",
+      "price": 99,
+      "rating": 3.4,
+      "id": 9,
+      "wishlist": false,
+      "cart": false
+    },
+    {
+      "brand": "Beats",
+      "model": "Headphones",
+      "description": "Redesigned from scratch and completely revised.",
+      "image": "5.png",
+      "price": 2499,
+      "rating": 3.4,
+      "id": 10,
+      "wishlist": false,
+      "cart": false
+    }
+  ]
+}
