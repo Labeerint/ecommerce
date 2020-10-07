@@ -1,11 +1,16 @@
 <template>
     <div class="catalog">
         <div class="upFilters">
-            Upfilters
+            <select @change="sort($event)">
+                <option value="id">Стандартно</option>
+                <option value="priceAsc">От дешевых к дорогим</option>
+                <option value="priceDesc">От дорогих к дешевым</option>
+                <option value="rating">По рейтингу</option>
+            </select>
         </div>
         <div class="content">
             <div class="filters">
-                Filter
+                <filters/>
             </div>
             <div class="right">
                 <div class="search">
@@ -25,19 +30,47 @@
 </template>
 
 <script>
+    import Filters from '../components/filters'
     import ProductItem from '../components/product-item'
     export default {
         name: 'Catalog',
         components: {
-            ProductItem
+            ProductItem,
+            Filters
         },
         computed:{
             getProducts(){
                 return this.$store.getters.getProducts
             }
-        },git
+
+        },
         async mounted(){
-            this.$store.dispatch('fetchProducts')
+            if(this.$store.getters.getProducts.length === 0){
+                this.$store.dispatch('fetchProducts')
+            }
+        },
+        methods:{
+            sort(event){
+                let sort;
+                switch (event.target.value) {
+                    case 'rating':{
+                        sort = 'rating&_order=asc'
+                        break
+                    }
+                    case 'priceAsc':{
+                        sort = 'price&_order=asc'
+                        break
+                    }
+                    case 'priceDesc':{
+                        sort = 'price&_order=desc'
+                        break
+                    }
+                    default:{
+                        sort = 'id&_order=asc'
+                    }
+                }
+                this.$store.dispatch('sort', sort)
+            }
         }
 
     }

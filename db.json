@@ -6,8 +6,9 @@
       "description": "Redesigned from scratch and completely revised.",
       "image": "1.png",
       "price": 399,
-      "rating": 3.4,
+      "rating": 4,
       "id": 1,
+      "category": "cell_phone_accessories",
       "wishlist": false,
       "cart": false
     },
@@ -17,8 +18,9 @@
       "description": "Redesigned from scratch and completely revised.",
       "image": "2.png",
       "price": 199,
-      "rating": 3.4,
+      "rating": 3,
       "id": 2,
+      "category": "audio",
       "wishlist": false,
       "cart": false
     },
@@ -28,8 +30,9 @@
       "description": "Redesigned from scratch and completely revised.",
       "image": "3.png",
       "price": 899,
-      "rating": 3.4,
+      "rating": 1,
       "id": 3,
+      "category": "cell_phone_accessories",
       "wishlist": false,
       "cart": false
     },
@@ -39,8 +42,9 @@
       "description": "Redesigned from scratch and completely revised.",
       "image": "4.png",
       "price": 459,
-      "rating": 3.4,
+      "rating": 1,
       "id": 4,
+      "category": "cell_phones",
       "wishlist": false,
       "cart": false
     },
@@ -50,8 +54,9 @@
       "description": "Redesigned from scratch and completely revised.",
       "image": "5.png",
       "price": 2499,
-      "rating": 3.4,
+      "rating": 2,
       "id": 5,
+      "category": "audio",
       "wishlist": false,
       "cart": false
     },
@@ -61,8 +66,9 @@
       "description": "Redesigned from scratch and completely revised.",
       "image": "6.png",
       "price": 899,
-      "rating": 3.4,
+      "rating": 2,
       "id": 6,
+      "category": "computers_tablets",
       "wishlist": false,
       "cart": false
     },
@@ -72,8 +78,9 @@
       "description": "Redesigned from scratch and completely revised.",
       "image": "7.png",
       "price": 499,
-      "rating": 3.4,
+      "rating": 4,
       "id": 7,
+      "category": "computers_tablets",
       "wishlist": false,
       "cart": false
     },
@@ -83,8 +90,9 @@
       "description": "Redesigned from scratch and completely revised.",
       "image": "8.png",
       "price": 899,
-      "rating": 3.4,
+      "rating": 3,
       "id": 8,
+      "category": "audio",
       "wishlist": false,
       "cart": false
     },
@@ -94,7 +102,7 @@
       "description": "Redesigned from scratch and completely revised.",
       "image": "9.png",
       "price": 99,
-      "rating": 3.4,
+      "rating": 5,
       "id": 9,
       "wishlist": false,
       "cart": false
@@ -105,10 +113,46 @@
       "description": "Redesigned from scratch and completely revised.",
       "image": "5.png",
       "price": 2499,
-      "rating": 3.4,
+      "rating": 1,
       "id": 10,
+      "category": "audio",
       "wishlist": false,
       "cart": false
     }
-  ]
+  ],
+  "filters": {
+    "multirange": [
+      {"id": 1, "text": "$10", "value": 10, "type": "price"},
+      {"id": 2, "text": "$10-100", "value": 100, "type": "price"},
+      {"id": 3, "text": "$100-500", "value": 100, "type": "price"},
+      {"id": 4, "text": "$500", "value": 100, "type": "price"},
+      {"id": 5, "text": "all", "value": 100, "type": "price"}
+    ],
+    "category": [
+      {"id": 6, "text": "Cell Phones", "value": "cell_phones", "type": "category"},
+      {"id": 7, "text": "Computers & Tablets", "value": "computers_tablets", "type": "category"},
+      {"id": 8, "text": "Cell Phone Accessories", "value": "cell_phone_accessories", "type": "category"},
+      {"id": 9, "text": "Appliances", "value": "appliances", "type": "category"},
+      {"id": 10, "text": "Audio", "value": "audio", "type": "category"},
+      {"id": 11, "text": "Cameras & Camcorders", "value": "cameras_camcorders", "type": "category"},
+      {"id": 12, "text": "iPhone Cases & Clips", "value": "iphone_cases_clips", "type": "category"},
+      {"id": 13, "text": "TV & Home Theater", "value": "tv_home_theater", "type": "category"},
+      {"id": 14, "text": "Small Kitchen Appliances", "value": "small_kitchen_appliances", "type": "category"}
+    ],
+    "brand": [
+      {"id": 15, "text": "Apple", "value": "Apple", "type": "brand"},
+      {"id": 16, "text": "Beats", "value": "Beats", "type": "brand"},
+      {"id": 17, "text": "JBL", "value": "JBL", "type": "brand"},
+      {"id": 18, "text": "JBuds", "value": "JBuds", "type": "brand"},
+      {"id": 19, "text": "Samsung", "value": "Samsung", "type": "brand"},
+      {"id": 20, "text": "HP", "value": "HP", "type": "brand"}
+    ],
+    "rating": [
+      {"id": 21, "text": "5 stars", "value": 5, "type": "rating"},
+      {"id": 22, "text": "4 stars", "value": 4, "type": "rating"},
+      {"id": 23, "text": "3 stars", "value": 3, "type": "rating"},
+      {"id": 24, "text": "2 stars", "value": 2, "type": "rating"},
+      {"id": 25, "text": "1 stars", "value": 1, "type": "rating"}
+    ]
+  }
 }

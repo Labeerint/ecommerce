@@ -11,7 +11,8 @@
         <h3 class="title">{{product.brand + ' ' + product.model}}</h3>
         <p class="description">{{product.description}}</p>
         <div class="buttons">
-            <button @click="wish" :class="[product.wishlist ? 'wishON' : 'wishOFF']"><font-awesome-icon icon="heart" /> WISHLIST</button>
+            <button v-if="product.wishlist" @click="deleteWish" class="wishON"><font-awesome-icon icon="heart" /> WISHLIST</button>
+            <button v-else @click="wish" class="wishOFF"><font-awesome-icon icon="heart" /> WISHLIST</button>
             <button class="cart"><font-awesome-icon icon="shopping-cart" /> ADD TO CART</button>
         </div>
     </div>
@@ -40,6 +41,9 @@
                     cart: this.product.cart
                 }
                 this.$store.dispatch('wish', w)
+            },
+            deleteWish(){
+                this.$store.dispatch('deleteWish', this.product.id)
             }
         }
     }
