@@ -129,15 +129,15 @@
       {"id": 5, "text": "all", "value": 100, "type": "price"}
     ],
     "category": [
-      {"id": 6, "text": "Cell Phones", "value": "cell_phones", "type": "category"},
-      {"id": 7, "text": "Computers & Tablets", "value": "computers_tablets", "type": "category"},
-      {"id": 8, "text": "Cell Phone Accessories", "value": "cell_phone_accessories", "type": "category"},
-      {"id": 9, "text": "Appliances", "value": "appliances", "type": "category"},
-      {"id": 10, "text": "Audio", "value": "audio", "type": "category"},
-      {"id": 11, "text": "Cameras & Camcorders", "value": "cameras_camcorders", "type": "category"},
-      {"id": 12, "text": "iPhone Cases & Clips", "value": "iphone_cases_clips", "type": "category"},
-      {"id": 13, "text": "TV & Home Theater", "value": "tv_home_theater", "type": "category"},
-      {"id": 14, "text": "Small Kitchen Appliances", "value": "small_kitchen_appliances", "type": "category"}
+      {"id": 6, "text": "Cell Phones", "value": "cell_phones", "type": "category","toggle": false},
+      {"id": 7, "text": "Computers & Tablets", "value": "computers_tablets", "type": "category", "toggle": false},
+      {"id": 8, "text": "Cell Phone Accessories", "value": "cell_phone_accessories", "type": "category", "toggle": false},
+      {"id": 9, "text": "Appliances", "value": "appliances", "type": "category", "toggle": false},
+      {"id": 10, "text": "Audio", "value": "audio", "type": "category", "toggle": false},
+      {"id": 11, "text": "Cameras & Camcorders", "value": "cameras_camcorders", "type": "category", "toggle": false},
+      {"id": 12, "text": "iPhone Cases & Clips", "value": "iphone_cases_clips", "type": "category", "toggle": false},
+      {"id": 13, "text": "TV & Home Theater", "value": "tv_home_theater", "type": "category", "toggle": false},
+      {"id": 14, "text": "Small Kitchen Appliances", "value": "small_kitchen_appliances", "type": "category", "toggle": false}
     ],
     "brand": [
       {"id": 15, "text": "Apple", "value": "Apple", "type": "brand"},

@@ -5,22 +5,20 @@
                 v-for="filter in getFilters.category"
                 :key="filter.id"
                 :filter="filter"
-                @checked="select"
         />
         <h3 class="filters__title">Brand</h3>
         <filters-item
                 v-for="filter in getFilters.brand"
                 :key="filter.id"
                 :filter="filter"
-                @checked="select"
         />
         <h3 class="filters__title">Rating</h3>
         <filters-item
                 v-for="filter in getFilters.rating"
                 :key="filter.id"
                 :filter="filter"
-                @checked="select"
         />
+        <button @click="clearFilters">CLEAR ALL FILTERS</button>
     </div>
 </template>
 
@@ -32,9 +30,11 @@
             FiltersItem
         },
         methods:{
-          select(data){
-            this.$store.dispatch('filter', data)
-          }
+            clearFilters(){
+                this.$store.dispatch('clearFilters')
+                this.$store.dispatch('filter', this.$store.getters.getCurrentFilters)
+                this.$store.dispatch('fetchFilters')
+            }
         },
         computed:{
             getFilters(){

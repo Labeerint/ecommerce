@@ -1,6 +1,6 @@
 <template>
     <div class="filter__item">
-        <input @change="checked" :value="filter.value" type="checkbox" name="checkbox" class="filters__checkbox">
+        <input @change="select" :value="filter.value" type="checkbox" name="checkbox" class="filters__checkbox" v-model="filter.toggle">
         <label for="checkbox">{{filter.text}}</label>
     </div>
 </template>
@@ -15,12 +15,16 @@
             }
         },
         methods:{
-            checked(){
-                this.$emit('checked', {
-                    id:this.filter.id,
-                    value:this.filter.value,
-                    type:this.filter.type
-                })
+            select(){
+                if(this.filter.toggle === true){
+                    this.$store.dispatch('addFilterItem', this.filter)
+                    this.$store.dispatch('filter', this.$store.getters.getCurrentFilters)
+                }
+                else{
+                    this.$store.dispatch('deleteFilterItem', this.filter.id)
+                    this.$store.dispatch('filter', this.$store.getters.getCurrentFilters)
+                }
+
             }
         }
     }

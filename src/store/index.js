@@ -3,12 +3,13 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 Vue.use(Vuex)
-let fill;
+
 export default new Vuex.Store({
   state: {
     products: [],
     filters: {},
-    wishlist: []
+    wishlist: [],
+    currentFilters:[]
   },
   mutations: {
     setProductsToState(state, products){
@@ -27,9 +28,25 @@ export default new Vuex.Store({
         state.wishlist.splice(wishItem, 1)
         state.products[id-1].wishlist = false
       }
-
+    },
+    addFilterItem(state, filterItem){
+      state.currentFilters.push(filterItem)
+    },
+    deleteFilterItem(state, id){
+      let filter = state.currentFilters.findIndex(i=>i.id === id)
+      if(filter !==-1){
+        state.currentFilters.splice(filter,1)
+      }
+    },
+    clearFilters(state){
+      state.currentFilters = []
     }
   },
+
+
+
+
+
   actions: {
     fetchProducts({commit}){
       return axios('http://localhost:3000/products',{method:'GET'})
@@ -55,44 +72,56 @@ export default new Vuex.Store({
             commit('setProductsToState', products.data)
           })
     },
+    addFilterItem({commit}, filterItem){
+      commit('addFilterItem', filterItem)
+    },
+    deleteFilterItem({commit}, id){
+      commit('deleteFilterItem', id)
+    },
     filter({commit}, data){
+      let fill;
 
-      switch (data.type) {
-        case 'category':{
-          if(fill === undefined){
-            fill = 'category='+data.value
+      data.forEach(function (filter) {
+        switch (filter.type) {
+          case 'category':{
+            if(fill === undefined){
+              fill = 'category='+filter.value
+            }
+            else{
+              fill+='&'+filter.value
+            }
+            break
           }
-          else{
-            fill+='&'+data.value
+          case 'brand':{
+            if(fill === undefined){
+              fill = 'brand='+filter.value
+            }
+            else{
+              fill+='&brand='+filter.value
+            }
+            break
           }
-          break
+          case 'rating':{
+            if(fill === undefined){
+              fill = 'rating='+filter.value
+            }
+            else{
+              fill+='&rating='+filter.value
+            }
+            break
+          }
+          default:{
+            alert('sos')
+          }
         }
-        case 'brand':{
-          if(fill === undefined){
-            fill = 'brand='+data.value
-          }
-          else{
-            fill+='&brand='+data.value
-          }
-          break
-        }
-        case 'rating':{
-          if(fill === undefined){
-            fill = 'rating='+data.value
-          }
-          else{
-            fill+='&rating='+data.value
-          }
-          break
-        }
-        default:{
-          alert('sos')
-        }
-      }
+      })
       return axios(`http://localhost:3000/products?${fill}`, {method:'GET'})
           .then((products) =>{
             commit('setProductsToState', products.data)
           })
+    },
+    clearFilters({commit}){
+      commit('clearFilters')
     }
     
   },
@@ -105,6 +134,9 @@ export default new Vuex.Store({
     },
     getFilters(state){
       return state.filters
+    },
+    getCurrentFilters(state){
+      return state.currentFilters
     }
   }
 })
