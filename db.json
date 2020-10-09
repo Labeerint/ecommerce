@@ -122,11 +122,11 @@
   ],
   "filters": {
     "multirange": [
-      {"id": 1, "text": "$10", "value": 10, "type": "price"},
-      {"id": 2, "text": "$10-100", "value": 100, "type": "price"},
-      {"id": 3, "text": "$100-500", "value": 100, "type": "price"},
-      {"id": 4, "text": "$500", "value": 100, "type": "price"},
-      {"id": 5, "text": "all", "value": 100, "type": "price"}
+      {"id": 1, "text": "$10", "value": 10, "type": "price","toggle": false},
+      {"id": 2, "text": "$10-100", "value": 100, "type": "price","toggle": false},
+      {"id": 3, "text": "$100-500", "value": 100, "type": "price","toggle": false},
+      {"id": 4, "text": "$500", "value": 100, "type": "price","toggle": false},
+      {"id": 5, "text": "all", "value": 100, "type": "price","toggle": false}
     ],
     "category": [
       {"id": 6, "text": "Cell Phones", "value": "cell_phones", "type": "category","toggle": false},

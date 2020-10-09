@@ -28,7 +28,7 @@
 
 <script >
     export default {
-        name: 'wishlist-item',
+        name: 'cart-item',
         props: {
             product:{
                 type: Object,
@@ -37,7 +37,7 @@
         },
         methods: {
             deleteItem(){
-                this.$store.dispatch('deleteWish', this.product.id)
+                this.$store.dispatch('deleteCartItem', this.product.id)
             }
         }
     }

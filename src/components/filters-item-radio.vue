@@ -1,13 +1,13 @@
 <template>
     <div class="filter__item">
-        <input @change="select" :id="filter.id" :value="filter.value" type="checkbox" name="checkbox" class="filter__checkbox" v-model="filter.toggle">
+        <input @change="select" :id="filter.id" type="radio" name="price" class="filter__checkbox" :value="filter.value" v-model="filter.toggle">
         <label class="filter__label" :for="filter.id">{{filter.text}}</label>
     </div>
 </template>
 
 <script>
     export default {
-        name: "filters-item",
+        name: "filters-item-radio",
         props:{
             filter:{
                 type:Object,
@@ -16,15 +16,9 @@
         },
         methods:{
             select(){
-                if(this.filter.toggle === true){
-                    this.$store.dispatch('addFilterItem', this.filter)
-                    this.$store.dispatch('filter', this.$store.getters.getCurrentFilters)
-                }
-                else{
-                    this.$store.dispatch('deleteFilterItem', this.filter.id)
-                    this.$store.dispatch('filter', this.$store.getters.getCurrentFilters)
-                }
-
+                this.$store.dispatch('addFilterItem', this.filter)
+                this.$store.dispatch('deleteFilterItemRadio', this.filter.id)
+                this.$store.dispatch('filter', this.$store.getters.getCurrentFilters)
             }
         }
     }
