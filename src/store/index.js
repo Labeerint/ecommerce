@@ -12,7 +12,7 @@ export default new Vuex.Store({
     cart: [],
     currentFilters:[],
     pageSize: 9,
-    currentPage: 2
+    currentPage: 1
   },
   mutations: {
     setProductsToState(state, products){

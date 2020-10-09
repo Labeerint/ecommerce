@@ -1,5 +1,6 @@
 <template>
-    <div class="product-item">
+    <div class="product-item" >
+        <Popup v-if="popVisible" :product="product" @close="popupClose"/>
         <img :src=" require('../assets/img/'+product.image)" alt="" class="product__img">
         <div class="top">
             <div class="rating">
@@ -8,7 +9,7 @@
             </div>
             <span class="price">${{product.price}}</span>
         </div>
-        <h3 class="title">{{product.brand + ' ' + product.model}}</h3>
+        <h3 class="title" @click="popupOpen">{{product.brand + ' ' + product.model}}</h3>
         <p class="description">{{product.description}}</p>
         <div class="buttons">
             <button v-if="product.wishlist" @click="deleteWish" class="wishON"><font-awesome-icon icon="heart" /> WISHLIST</button>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+    import Popup from './popup'
     export default {
         name: 'product-item',
         props: {
@@ -28,7 +30,19 @@
                 required:true
             }
         },
+        data(){
+          return{ popVisible: false}
+        },
+        components:{
+            Popup
+        },
         methods: {
+            popupOpen(){
+              this.popVisible = true
+            },
+            popupClose(){
+                this.popVisible = false
+            },
             wish(){
                 const wishItem = {
                     brand: this.product.brand,
@@ -109,6 +123,7 @@
     }
 
     .title{
+        cursor: pointer;
         margin-top: 16px;
         font-size: 16px;
         text-align: left;

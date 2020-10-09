@@ -20,9 +20,6 @@
                     </div>
                 </div>
                 <button @click="deleteItem" class="delete">X</button>
-<!--                <div class="buttons">-->
-<!--                    <button @click="wish" :class="[product.wishlist ? 'wishON' : 'wishOFF']"><font-awesome-icon icon="heart" /> WISHLIST</button>-->
-<!--                </div>-->
     </div>
 </template>
 

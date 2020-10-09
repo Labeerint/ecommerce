@@ -47,8 +47,7 @@
 .app{
   background: #2B3253;
   color: #fff;
-  padding-top: 20px;
-  padding: 0 20px;
+  padding: 30px 20px;
 }
 
 .content{
