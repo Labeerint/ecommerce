@@ -16,7 +16,6 @@
                             <h3 class="title">{{product.brand + ' ' + product.model}}</h3>
                             <p class="description">{{product.description}}</p>
                         </div>
-                        <button class="cart"><font-awesome-icon icon="shopping-cart" /> ADD TO CART</button>
                     </div>
                 </div>
                 <button @click="deleteItem" class="delete">X</button>
@@ -69,8 +68,6 @@
     }
 
     .top{
-        /*width: 400px;*/
-        /*height: 30px;*/
         margin-right: 50px;
         display: flex;
         justify-content: space-between;
@@ -118,20 +115,6 @@
 
     .text{
         margin-right: 30px;
-    }
-
-    .cart{
-        outline: none;
-        height: 45px;
-        width: 186px;
-        background: #B8C2CC;
-        border: none;
-        border-radius: 8px;
-        margin-left: -19px;
-        color: #2C2C20;
-        font-weight: 600;
-        font-family: Montserrat;
-        margin-left: auto;
     }
 
     .delete{

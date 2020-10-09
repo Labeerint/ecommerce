@@ -84,26 +84,28 @@
 <style scoped lang="scss">
     .popup{
         margin-top: 30px;
-        padding: 20px;
+        padding: 50px;
         background: #0F1642;
         display: flex;
         border-radius: 10px;
         position: fixed;
         top: 25vh;
         left: 25vw;
-        padding-bottom: 100px;
+        border: 1px solid #ffffff;
     }
 
     .image_wrapper{
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 500px;
+        height: 300px;
     }
 
     .product__img{
-        width: 500px;
-        /*max-width: 100%;*/
-        /*max-height: 100%;*/
+        /*width: 500px;*/
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .cont{
@@ -115,8 +117,6 @@
     }
 
     .top{
-        /*width: 400px;*/
-        /*height: 30px;*/
         margin-right: 50px;
         display: flex;
         justify-content: space-between;

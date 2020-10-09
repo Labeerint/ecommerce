@@ -12,7 +12,10 @@ export default new Vuex.Store({
     cart: [],
     currentFilters:[],
     pageSize: 9,
-    currentPage: 1
+    currentPage: 1,
+    cartEmpty: true,
+    wishlistEmpty: true,
+    allPrice: 0
   },
   mutations: {
     setProductsToState(state, products){
@@ -24,6 +27,7 @@ export default new Vuex.Store({
     addToWishlist(state, wishObject){
       state.wishlist.push(wishObject)
       state.products[wishObject.id-1].wishlist = true
+      state.wishlistEmpty = false
     },
     deleteWish(state, id){
       let wishItem = state.wishlist.findIndex(w => w.id === id)
@@ -31,16 +35,25 @@ export default new Vuex.Store({
         state.wishlist.splice(wishItem, 1)
         state.products[id-1].wishlist = false
       }
+      if(state.wishlist.length==0){
+        state.wishlistEmpty = true
+      }
     },
     addCartItem(state, cartItem){
       state.cart.push(cartItem)
       state.products[cartItem.id-1].cart = true
+      state.cartEmpty = false
+      state.allPrice += cartItem.price
     },
     deleteCartItem(state, id){
       let cartItem = state.cart.findIndex(c=>c.id ===id)
       if(cartItem !==-1){
         state.cart.splice(cartItem, 1)
         state.products[id-1].cart = false
+        state.allPrice -= state.products[id-1].price
+      }
+      if(state.cart.length==0){
+        state.cartEmpty = true
       }
     },
     addFilterItem(state, filterItem){
@@ -64,6 +77,11 @@ export default new Vuex.Store({
     },
     changeCurrentPage(state, pageItem){
       state.currentPage = pageItem
+    },
+    clearCart(state){
+      state.cart = []
+      state.allPrice = 0
+      state.cartEmpty = true
     }
   },
 
@@ -173,6 +191,9 @@ export default new Vuex.Store({
           .then((products) =>{
             commit('setProductsToState', products.data)
           })
+    },
+    clearCart({commit}){
+      commit('clearCart')
     }
 
     
@@ -204,6 +225,9 @@ export default new Vuex.Store({
     },
     getCurrentPages(state){
       return state.currentPage
+    },
+    getAllPrice(state){
+      return state.allPrice
     }
 
   }

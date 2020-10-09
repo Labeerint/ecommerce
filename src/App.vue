@@ -15,12 +15,6 @@
         </ul>
         <div class="bar"></div>
       </div>
-      <div class="crumbs">
-        <h2 class="crumbs__title">
-          Card Actions
-        </h2>
-        <div class="crumbs__items"></div>
-      </div>
       <div class="view">
         <router-view></router-view>
       </div>
@@ -48,6 +42,7 @@
   background: #2B3253;
   color: #fff;
   padding: 30px 20px;
+  min-height: 100vh;
 }
 
 .content{
@@ -92,15 +87,6 @@
     background: aqua;
     margin-left: auto;
     margin-right: 20px;
-  }
-
-  .crumbs{
-    margin-top: 25px;
-    display: flex;
-
-    &__title{
-      font-size: 24px;
-    }
   }
 
   .view{
