@@ -1,14 +1,6 @@
 <template>
     <div class="filters">
-        <div class="filter__group">
-            <h3 class="filters__group filters__group_noborder">Multi Range</h3>
-            <filters-item-radio
-                    v-for="filter in getFilters.multirange"
-                    :key="filter.id"
-                    :filter="filter"
-            />
-        </div>
-        <div class="filters__group">
+        <div class="filters__group filters__group_noborder">
             <h3 class="filters__title">Category</h3>
             <filters-item
                     v-for="filter in getFilters.category"
@@ -39,12 +31,10 @@
 
 <script>
     import FiltersItem from './filters-item'
-    import FiltersItemRadio from './filters-item-radio'
     export default {
         name: 'filters',
         components:{
-            FiltersItem,
-            FiltersItemRadio
+            FiltersItem
         },
         methods:{
             clearFilters(){
@@ -58,7 +48,7 @@
                 return this.$store.getters.getFilters;
             }
         },
-        async mounted(){
+        mounted(){
             this.$store.dispatch('fetchFilters')
         }
     }

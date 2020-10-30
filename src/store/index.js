@@ -44,6 +44,9 @@ export default new Vuex.Store({
       state.products[cartItem.id-1].cart = true
       state.cartEmpty = false
       state.allPrice += cartItem.price
+      if(state.wishlist[cartItem.id-1] != undefined){
+        state.wishlist[cartItem.id-1].cart = true
+      }
     },
     deleteCartItem(state, id){
       let cartItem = state.cart.findIndex(c=>c.id ===id)
@@ -51,6 +54,9 @@ export default new Vuex.Store({
         state.cart.splice(cartItem, 1)
         state.products[id-1].cart = false
         state.allPrice -= state.products[id-1].price
+        if(state.wishlist[id-1] != undefined){
+          state.wishlist[id-1].cart = false
+        }
       }
       if(state.cart.length==0){
         state.cartEmpty = true
@@ -82,6 +88,9 @@ export default new Vuex.Store({
       state.cart = []
       state.allPrice = 0
       state.cartEmpty = true
+      state.products.forEach(function (product) {
+        product.cart = false
+      })
     }
   },
 
@@ -134,15 +143,6 @@ export default new Vuex.Store({
 
       data.forEach(function (filter) {
         switch (filter.type) {
-          case 'price':{
-            if(fill === undefined){
-              fill = 'price='+filter.value
-            }
-            else{
-              fill+='&price'+filter.value
-            }
-            break
-          }
           case 'category':{
             if(fill === undefined){
               fill = '&category='+filter.value

@@ -1,7 +1,7 @@
 <template>
     <div class="cart-wrapper">
         <div v-if="getStatus" class="empty">
-            <h2>your basket is empty</h2>
+            <h2 class="empty__text">your basket is empty</h2>
         </div>
         <cart-item
             v-for="product in getCart"
@@ -42,6 +42,7 @@
 </script>
 
 <style >
+
     .cart-bottom{
         margin-top: 20px;
         display: flex;

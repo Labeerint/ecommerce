@@ -16,7 +16,8 @@
                             <h3 class="title">{{product.brand + ' ' + product.model}}</h3>
                             <p class="description">{{product.description}}</p>
                         </div>
-                        <button class="cart"><font-awesome-icon icon="shopping-cart" /> ADD TO CART</button>
+                        <button v-if="product.cart" @click="deleteCartItem" class="cart cart_OFF"><font-awesome-icon icon="shopping-cart" /> IN YOUR CART</button>
+                        <button v-else @click="addCartItem" class="cart cart_ON"><font-awesome-icon icon="shopping-cart" /> ADD TO CART</button>
                     </div>
                 </div>
                 <button @click="deleteItem" class="delete">X</button>
@@ -35,6 +36,24 @@
         methods: {
             deleteItem(){
                 this.$store.dispatch('deleteWish', this.product.id)
+            },
+            addCartItem(){
+                const cartItem = {
+                    brand: this.product.brand,
+                    model: this.product.model,
+                    description: this.product.description,
+                    image: this.product.image,
+                    price: this.product.price,
+                    rating: this.product.rating,
+                    id: this.product.id,
+                    category: this.product.category,
+                    wishlist: this.product.wishlist,
+                    cart: true
+                }
+                this.$store.dispatch('addCartItem', cartItem)
+            },
+            deleteCartItem(){
+                this.$store.dispatch('deleteCartItem', this.product.id)
             }
         }
     }
@@ -128,11 +147,22 @@
         border: none;
         border-radius: 8px;
         margin-left: -19px;
-        color: #2C2C20;
         font-weight: 600;
         font-family: Montserrat;
         margin-left: auto;
+        transition: all .5s;
     }
+
+    .cart_OFF{
+        background: #ffffff;
+        color: #000000;
+    }
+
+    .cart_ON{
+        background: #6F64F8;
+        color: #ffffff;
+    }
+
 
     .delete{
         position: absolute;

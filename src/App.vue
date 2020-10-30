@@ -2,18 +2,18 @@
   <div id="app" class="app">
     <div class="container">
       <div id="nav" class="nav">
+        <h1 class="nav__title">Ecommerce</h1>
         <ul class="categories">
           <li class="categories__item">
             <router-link class="categories__link" to="/"><font-awesome-icon icon="home" /></router-link>
           </li>
           <li class="categories__item">
-            <router-link class="categories__link" to="/cart"><font-awesome-icon icon="heart" /></router-link>
+            <router-link class="categories__link" to="/cart"><font-awesome-icon icon="shopping-cart" /></router-link>
           </li>
           <li class="categories__item">
-            <router-link class="categories__link" to="/wishlist"><font-awesome-icon icon="star" /></router-link>
+            <router-link class="categories__link" to="/wishlist"><font-awesome-icon icon="heart" /></router-link>
           </li>
         </ul>
-        <div class="bar"></div>
       </div>
       <div class="view">
         <router-view></router-view>
@@ -55,8 +55,17 @@
     background: #0F1642;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
     border-radius: 8px;
-    padding-top: 10px;
+    padding: 10px 20px 0 20px;
     display: flex;
+    justify-content: space-between;
+
+    &__title{
+      margin-top: 7px;
+      font-weight: 600;
+      font-size: 22px;
+      color: #7E72F2;
+      text-transform: uppercase;
+    }
 
   }
 

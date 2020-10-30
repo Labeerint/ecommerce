@@ -33,7 +33,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -75,7 +74,7 @@
             }
 
         },
-        async mounted(){
+        mounted(){
             if(this.$store.getters.getProducts.length === 0){
                 let pageSize = this.$store.getters.getPageSize
                 this.$store.dispatch('fetchProducts', pageSize)
@@ -167,7 +166,7 @@
 
     .products{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
     }
 

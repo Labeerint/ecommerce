@@ -12,9 +12,9 @@
         <h3 class="title" @click="popupOpen">{{product.brand + ' ' + product.model}}</h3>
         <p class="description">{{product.description}}</p>
         <div class="buttons">
-            <button v-if="product.wishlist" @click="deleteWish" class="wishON"><font-awesome-icon icon="heart" /> WISHLIST</button>
+            <button v-if="product.wishlist" @click="deleteWish" class="wishON"><font-awesome-icon icon="heart" /></button>
             <button v-else @click="wish" class="wishOFF"><font-awesome-icon icon="heart" /> WISHLIST</button>
-            <button v-if="product.cart" @click="deleteCartItem" class="cart cart_OFF"><font-awesome-icon icon="shopping-cart" /> ADD TO CART</button>
+            <button v-if="product.cart" @click="deleteCartItem" class="cart cart_OFF"><font-awesome-icon icon="shopping-cart" /> IN YOUR CART</button>
             <button v-else @click="addCartItem" class="cart cart_ON"><font-awesome-icon icon="shopping-cart" /> ADD TO CART</button>
         </div>
     </div>
@@ -150,19 +150,22 @@
         color: #2C2C20;
         font-weight: 600;
         font-family: Montserrat;
+        transition: all .5s;
     }
 
      .wishON{
          outline: none;
          height: 45px;
          width: 186px;
-         background: red;
+         background: #FF0D00;
          border: none;
          border-radius: 0px 0px 0px 8px;
          margin-left: -19px;
-         color: #2C2C20;
+         color: #fff;
+         font-size: 25px;
          font-weight: 600;
          font-family: Montserrat;
+         transition: all .5s;
      }
 
     .cart{
@@ -175,10 +178,12 @@
         color: #FFFFFF;
         font-weight: 600;
         outline: none;
+        transition: all .5s;
     }
 
     .cart_OFF{
-        background: white;
+        background: #ffffff;
+        color: #000000;
     }
 
      .cart_ON{
